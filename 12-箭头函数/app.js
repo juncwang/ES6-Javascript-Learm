@@ -74,7 +74,7 @@ const team = {
   teamName:"es6",
   teamSummary:function(){
     // 使用箭头符号改变 this 的指向
-    // 感觉系统没把 箭头函数当作一给函数, 而只是当作一给执行序列, 不会改变 this 的指向问题
+    // 感觉系统没把 箭头函数当作一给函数, 而只是当作一个执行序列, 不会改变 this 的指向
     return this.members.map((member) => {
       // this指向的就是team对象
       return `${member}隶属于${this.teamName}小组`;
