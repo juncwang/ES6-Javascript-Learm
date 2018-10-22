@@ -81,3 +81,110 @@
     * 例子 `const {length} = Array` 
     * 例子 `const [name,...rest] = Array`  混合展开运算符进行解构 `name = "Henry", rest = ["Bucky","Emily"]`
     * 解构时 数组按前后顺序进行解构, 不需要名称一致
+
+18. 面向对象(class)
+    * 万事皆对象
+    * 使用 `class` 关键字定义
+    * 使用 `constructor` 函数定义构造函数, 使用 `this.变量名` 定义类的变量
+    * 可在 `class` 内部使用 `函数名(){}` 定义函数
+    * 使用 `static (变量名/函数名())` 关键自定义静态变量或函数, 定义静态变量时不需要将静态变量写在构造函数内
+    * 使用 `extends` 关键字实现继承
+
+19. generator生成器(斐波那契数列)
+    * 可以返回多次的函数
+    * 使用 `function* 生成器名(){}` 定义生成器
+    * 使用 `yield` 定义返回值对象
+    * 使用举例: `const gen = 生成器名()` 把生成器付给变量
+    * 使用时 `console.log(gen.next())` 使用 `next()` 方法调用生成器当前返回对象
+    * 返回对象是 `value: 返回的值 , done: 是否完成`
+    * 例子说明
+
+20. generator生成器原理(迭代器实现)
+    * 迭代器还原生成器的结构
+    * 多个 yield 返回原理
+
+21. generator实战demo(相亲网)
+    * 例子
+
+22. 新的数据结构(map)
+    * 键值对: 与对象不同的是键和值可以是任何类型
+    * 定义 `map` 的形式 `const map1 = new Map()`
+    * 定义 `对象` 的形式 `const obj1 = new Object()`
+    * 使用 `set()` 设置或添加 `map` 的内容
+        * 例如 `map1.set('test1','Value of key1')`
+    * 使用 `get()` 获取 `map` 中的 key 对应的值
+    * 使用 `size` 获取 `map` 值的数量
+    * 使用 `for...of` 遍历 `map`
+        * 例如 `for( let [key, value] of map1){console.log(`${key} = ${value}`)}`
+    * 使用 `forEach` 遍历 `map`
+        * 例如 `map1.forEach((value,key) => { console.log(`${key} = ${value}`) })`
+    * 使用 `map` 转化为正常的数组
+        * 例如 `const keyValueArray = Array.from(map1)`
+    * 使用 `map` 中的key转化为数组
+        * 例如 `const keyArray = Array.from(map1.keys())`
+    * 使用 `map` 中的value值转换为数组
+        * 例如 `const valueArray = Array.from(map1.values())`
+
+23. 新的数据结构(set)
+    * 集合: 可以存储任何数据类型,并且是唯一的(不重复的值)
+    * 定义 `set` 的形式 `const set1 = new Set();`
+    * 定义 `对象` 的形式 `const obj1 = new Object()`
+    * 使用 `add()` 添加 `set` 的内容
+        * 例如 `set1.add(100)`
+    * 使用 `size` 获取 `set` 值的数量
+    * 使用 `has()` 检查 `set` 中是否拥有对应的值
+        * 例如 `console.log(set1.has(100))`
+    * 使用 `delete` 删除 `set` 中的内容
+        * 例如 `set1.delete(100)`
+    * 使用 `forEach` 遍历
+        * 例如 `set1.forEach((value) =>{ console.log(value) })`
+    * 将 `set` 转换为 `array`
+        * 例如 `const setArray = Array.from(set1)`
+
+24. Promise(三种状态)
+    * 构造函数
+    * 定义使用它的形式
+    ```js
+    let promise = new Promise((resolve,reject) => {
+        // resolve();           // 成功状态, 使用后 then 方法可以被调用, 且可被调用多次
+        // reject();            // 失败状态, 使用后 catch 方法可以被调用, 且可被调用多次
+    });
+
+    promise
+        .then(() => console.log("成功,可以无限调用then方法!"))
+        .catch(() => console.log("uh oh,出现了重大问题!"))
+    ```
+
+25. fetch(新的http请求方法)
+    * 一个基于promise的请求方法,更简单,更便捷
+    * 他也拥有 then() 方法及 catch() 方法
+    * 使用例子
+    ```js
+    // 传入一个地址(本地或或网络)
+    fetch(url)
+        // response => response.json() 让返回的信息进行 json 解析
+        .then(response => response.json())
+        .then(data => console.log(data))
+        .catch(err => console.log("error:" + err));
+    ```
+    * 该方法 `then` 及 `catch` 方法的使用方法
+        * 需要传入一个带一个形参的回调函数接受返回的数据
+        * 返回的数据如果是 json 数据,首先需要 json() 方法把文字流进行转换一次
+        * 返回的数据如果是 文本 数据,首先需要 text() 方法把文字流进行转换一次
+        * 然后才可以进行使用
+
+26. fetch(请求三种数据格式)
+    * 例子: 请求本地文本数据
+    * 例子: 请求本地 json 数据
+    * 例子: 请求网络接口
+
+27. 封装fetch库(增删改查)
+    * 例子
+
+21. generator实战demo(相亲网)
+    * 例子
+
+
+### 经常会使用到的测试网络 
+* `http://jsonplaceholder.typicode.com/`
+* `https://api.github.com/users`
