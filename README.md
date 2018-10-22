@@ -148,10 +148,14 @@
     let promise = new Promise((resolve,reject) => {
         // resolve();           // 成功状态, 使用后 then 方法可以被调用, 且可被调用多次
         // reject();            // 失败状态, 使用后 catch 方法可以被调用, 且可被调用多次
+        // 根据条件判断调用哪一个方法
+        // 如果使用 return 就可以在 then 或 catch 方法的回调函数中传入一个 return 的方法
+        // return data
     });
 
     promise
         .then(() => console.log("成功,可以无限调用then方法!"))
+        // .then(data => console.log(data))
         .catch(() => console.log("uh oh,出现了重大问题!"))
     ```
 
@@ -178,10 +182,19 @@
     * 例子: 请求本地 json 数据
     * 例子: 请求网络接口
 
-27. 封装fetch库(增删改查)
+### 27. 封装fetch库(增删改查) 
+* 利用 `fetch` 与 `Promise` 实现更快,更简单的请求数据
+* 实现功能有: 直接获取数据及通过上传参数获取数据
+
+28. async和await(es7)
+    * 定义方法时加入 `async` 就等同于使用 `Promise` 类型
+    * 就可以直接使用 `then() 或 catch()` 方法
+    * 详见例子
+
+29. async封装fetch(2.0版本)
     * 例子
 
-21. generator实战demo(相亲网)
+30. ES6-promise的应用-回调异步asyncawait
     * 例子
 
 
