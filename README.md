@@ -147,9 +147,11 @@
     ```js
     let promise = new Promise((resolve,reject) => {
         // resolve();           // 成功状态, 使用后 then 方法可以被调用, 且可被调用多次
+        // resolve(data)
         // reject();            // 失败状态, 使用后 catch 方法可以被调用, 且可被调用多次
+        // reject(err)
         // 根据条件判断调用哪一个方法
-        // 如果使用 return 就可以在 then 或 catch 方法的回调函数中传入一个 return 的方法
+        // 如果使用 return 就可以在 then 方法的回调函数中传入一个 return 的方法
         // return data
     });
 
