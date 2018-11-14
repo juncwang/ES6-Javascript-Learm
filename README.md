@@ -202,6 +202,11 @@
     * 异步之间的操作
 
 
+### 其他经常使用的函数
+
+* form 表单中给按钮事件方法后, 取消默认事件
+   * `(e) => { e.preventDefault() }` 取消后不再刷新页面
+
 ### 经常会使用到的测试网络 
 * `http://jsonplaceholder.typicode.com/`
 * `https://api.github.com/users`
